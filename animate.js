@@ -1,6 +1,6 @@
 
 
-const Resizer = (()=>{
+const Resize = (()=>{
     R = {}
 
     R.resizeCanvas = (canvas)=>{
@@ -40,12 +40,12 @@ const Quicksort = (()=>{
         canvas.ctx.clearRect(0,0,window.innerWidth,window.innerHeight)
         Q.arrayToSort.forEach((elem, index)=>{
             canvas.ctx.fillStyle = elem.color
-            var barWidth = 900/Settings.arrayToSortLenth 
+            var barWidth = window.innerWidth * 0.7 / Settings.arrayToSortLenth 
             canvas.ctx.fillRect(
-                100 + barWidth*index,
-                window.innerHeight - 100,
+                window.innerWidth * 0.15 + barWidth*index,
+                window.innerHeight * 0.9,
                 barWidth*0.9, 
-                -500 * elem.value
+                -window.innerHeight * 0.8 * elem.value
             )
         })
     }
